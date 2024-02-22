@@ -39,7 +39,7 @@ function keepPinging() {
 
 }
 
-app.listen(process.env.PORT || 3000, async (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
 
     console.log("Running on Port 30000!!!");
 
