@@ -11,6 +11,12 @@ app.post('/update', async (req, res) => {
     return res.status(200).send();
 });
 
+app.get('/', (req, res) => {
+
+    res.status(200).send("Hello world!!!");
+
+})
+
 async function keepPinging() {
 
     var url = "https://atccontests.glitch.me/";
