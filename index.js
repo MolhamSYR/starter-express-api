@@ -13,7 +13,7 @@ app.post('/update', async (req, res) => {
 
 app.get('/', (req, res) => {
 
-    res.status(200).send("Hello world!!!");
+    return res.status(200).send("Hello world!!!");
 
 })
 
@@ -25,7 +25,7 @@ async function keepPinging() {
 
     console.log("Sent Ping to ATC");
 
-    setTimeout(keepPinging, 1000 * 60 * 5);
+    setTimeout(keepPinging, 1000 * 60);
 
 }
 
@@ -33,7 +33,7 @@ app.listen(process.env.PORT || 3000, async (err) => {
 
     console.log("Running on Port 30000!!!");
 
-    await keepPinging();
+    keepPinging();
     
 
 })
