@@ -20,7 +20,8 @@ app.get('/', (req, res) => {
 async function keepPinging() {
 
     var url = "https://atccontests.glitch.me/";
-
+    
+    console.log("Sending Ping to ATC");
     var response = await axios.get("https://atccontests.glitch.me/");
 
     console.log("Sent Ping to ATC");
