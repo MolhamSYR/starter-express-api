@@ -17,18 +17,25 @@ app.get('/', (req, res) => {
 
 })
 
-async function keepPinging() {
+function keepPinging() {
 
     var url = "https://atccontests.glitch.me/";
     
     console.log("Sending Ping to ATC");
-    var response = await axios.get("https://atccontests.glitch.me/");
+    axios
+    .get(url)
+    .then(function (response) {
+        console.log("RESPONSE: " + response);
+
+        console.log("Sent Ping to ATC");
+
+        setTimeout(keepPinging, 1000 * 60);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
     
-    console.log("RESPONSE: " + response);
-
-    console.log("Sent Ping to ATC");
-
-    setTimeout(keepPinging, 1000 * 60);
+    
 
 }
 
