@@ -13,7 +13,7 @@ app.post('/update', async (req, res) => {
 
 app.get('/', (req, res) => {
 
-    return res.status(200).send("Hello world!!!");
+    res.status(200).send("Hello world!!!");
 
 })
 
@@ -23,6 +23,8 @@ async function keepPinging() {
     
     console.log("Sending Ping to ATC");
     var response = await axios.get("https://atccontests.glitch.me/");
+    
+    console.log("RESPONSE: " + response);
 
     console.log("Sent Ping to ATC");
 
