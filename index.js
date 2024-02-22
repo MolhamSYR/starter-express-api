@@ -35,5 +35,5 @@ app.listen(process.env.PORT || 3000, async (err) => {
 
     keepPinging();
     
-
+    console.log("Finished Function");
 })
