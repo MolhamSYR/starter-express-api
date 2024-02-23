@@ -4,11 +4,19 @@ const axios = require('axios')
 
 app.post('/update', async (req, res) => {
 
-    var response = await axios.get('https://atccontests.glitch.me/updatecontests');
+    axios.get('https://atccontests.glitch.me/updatecontests').then(function (response) 
+     {
 
-    console.log("response");
+        console.log("GOT REQUEST FROM POST");
+        return res.status(200).send("Got it from post!!");
 
-    return res.status(200).send();
+    }).catch(err => {
+        if(err) console.log(err);
+    });
+
+    console.log(response);
+
+    return res.status(200).send("Got it");
 });
 
 app.get('/', (req, res) => {
