@@ -4,7 +4,7 @@ const axios = require('axios')
 
 app.post('/update', async (req, res) => {
 
-    axios.get('https://atccontests.glitch.me/updatecontests').then(function (response) 
+    fetch('https://atccontests.glitch.me/updatecontests').then(function (response) 
      {
 
         console.log("GOT REQUEST FROM POST");
@@ -30,8 +30,7 @@ function keepPinging() {
     var url = "https://atccontests.glitch.me/";
     
     console.log("Sending Ping to ATC");
-    axios
-    .get(url)
+    fetch(url)
     .then(function (response) {
         console.log("RESPONSE: " + response);
 
